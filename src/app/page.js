@@ -68,6 +68,7 @@ export default function Page() {
   return (
   <>
     <main className="max-w-2xl mx-auto p-4 mt-10 bg-white rounded shadow-md">
+    <h1>CHECKING THE GITHUB ACTIONS WORKFLOW</h1>
       <h1 className="text-3xl font-bold mb-6 text-center text-sky-700">📝 Task Manager</h1>
 
       <form
