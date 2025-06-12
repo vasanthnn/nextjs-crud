@@ -10,7 +10,10 @@
     "testdb": "node test.js"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.826.0",
+    "@aws-sdk/s3-request-presigner": "^3.828.0",
     "dotenv": "^16.5.0",
+    "formidable": "^3.5.4",
     "mongodb": "^6.17.0",
     "mongoose": "^8.15.1",
     "next": "15.3.3",

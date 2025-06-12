@@ -1,9 +1,8 @@
 import dotenv from 'dotenv';
-dotenv.config({ path: '.env.local' }); 
-
-
 import mongoose from 'mongoose';
 
+dotenv.config({ path: '.env.local' });
+
 mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('✅ Connected to MongoDB'))
-  .catch(err => console.error('❌ Connection error:', err));
+  .then(() => console.log("✅ Connected"))
+  .catch(err => console.error("❌ Failed:", err));
