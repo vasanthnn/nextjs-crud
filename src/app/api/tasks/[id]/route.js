@@ -5,10 +5,18 @@ import mongoose from 'mongoose';
 
 export async function PUT(req, { params }) {
   await connectDB();
-  const body = await req.json();
-  const updatedTask = await Task.findByIdAndUpdate(params.id, body, { new: true });
+  const { title, description, imageUrl } = await req.json();
+
+  const updatedTask = await Task.findByIdAndUpdate(
+    params.id,
+    { title, description, imageUrl },
+    { new: true }
+  );
+console.log("🛠️ PUT body:", { title, description, imageUrl });
+
   return Response.json(updatedTask);
 }
+
 
 export async function DELETE(req, { params }) {
   try {
