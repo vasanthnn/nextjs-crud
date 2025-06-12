@@ -3,10 +3,6 @@ import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 
 const s3 = new S3Client({
   region: 'us-east-1',
-  credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,     
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  },
 });
 
 export async function GET(req) {
@@ -23,7 +19,7 @@ export async function GET(req) {
   try {
     const command = new GetObjectCommand({
       Bucket: 'vasanthan-bucket-20250611-u8c9p7q2m1vzxk',
-      Key: key.replace(/^https:\/\/[^/]+\/?/, ''), // Remove domain if full URL passed
+      Key: key.replace(/^https:\/\/[^/]+\/?/, ''), 
     });
 
     const url = await getSignedUrl(s3, command, { expiresIn: 300 });
